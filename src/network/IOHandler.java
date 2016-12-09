@@ -15,16 +15,25 @@ public class IOHandler {
 
 	private ServerSocket serverSocket;
 
-	public void connectToServer(String serverName, int port){
+	/**
+	 * Try to connect using the specific ip address and port.
+	 * @param ipAddress
+	 * @param port
+	 */
+	public void connectToServer(String ipAddress, int port){
 		try {
-			clientSocket = new Socket(serverName, port);
-			outputStream = new DataOutputStream(clientSocket.getOutputStream());
+			clientSocket = new Socket(ipAddress, port);
 			inputStream = new DataInputStream(clientSocket.getInputStream());
+			outputStream = new DataOutputStream(clientSocket.getOutputStream());
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
 
+	/**
+	 * Try to create a server using local ip address of the machine with a given port.
+	 * @param port
+	 */
 	public void createServer(int port){
 		try {
 			serverSocket = new ServerSocket(port);
@@ -39,6 +48,9 @@ public class IOHandler {
 		}
 	}
 
+	/**
+	 * Run server.
+	 */
 	public void runServer(){
 		try {
 			clientSocket = serverSocket.accept();
@@ -51,7 +63,11 @@ public class IOHandler {
 		}
 	}
 
-	public String recieveData(){
+	/**
+	 * Listens for incoming data.
+	 * @return String of the received data.
+	 */
+	public String receiveData(){
 		try {
 			return inputStream.readUTF();
 		}catch(IOException e){
@@ -60,6 +76,10 @@ public class IOHandler {
 		return null;
 	}
 
+	/**
+	 * Send a set amount of data to paired game.
+	 * @param data String of data.
+	 */
 	public void sendData(String data) {
 		try {
 			outputStream.writeUTF(data);
@@ -68,7 +88,10 @@ public class IOHandler {
 		}
 	}
 
-	public void closeS() {
+	/**
+	 * Close all I/O connections.
+	 */
+	public void close() {
 		try {
 			clientSocket.close();
 			serverSocket.close();
