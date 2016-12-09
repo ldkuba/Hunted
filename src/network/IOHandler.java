@@ -51,7 +51,7 @@ public class IOHandler {
 		}
 	}
 
-	public String recieveData(){
+	public String receiveData(){
 		try {
 			return inputStream.readUTF();
 		}catch(IOException e){
