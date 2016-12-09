@@ -3,7 +3,7 @@ package network;
 import java.net.*;
 import java.io.*;
 
-public class Server {
+public class HostGame extends IOHandler{
 	String Host;
  	DataInputStream in;
 	DataOutputStream out;
@@ -11,7 +11,7 @@ public class Server {
 	private ServerSocket serverSocket;
 
 	
-	public Server(int port) throws IOException {
+	public HostGame(int port) throws IOException {
 	    serverSocket = new ServerSocket(port);
 	    serverSocket.setSoTimeout(100000);
 		
