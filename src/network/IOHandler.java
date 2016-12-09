@@ -15,6 +15,16 @@ public class IOHandler {
 
 	private ServerSocket serverSocket;
 
+	public void connectToServer(String serverName, int port){
+		try {
+			clientSocket = new Socket(serverName, port);
+			outputStream = new DataOutputStream(clientSocket.getOutputStream());
+			inputStream = new DataInputStream(clientSocket.getInputStream());
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public void createServer(int port){
 		try {
 			serverSocket = new ServerSocket(port);
