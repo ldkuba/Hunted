@@ -1,0 +1,12 @@
+Tiles:
+	-type
+	-image
+	-x, y
+Objects:
+	-type
+	-images[] for 4 rotations
+	-x, y
+	-rotation (0,1,2,3)
+
+TileMap
+ObjectMap
