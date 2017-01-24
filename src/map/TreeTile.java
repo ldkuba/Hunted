@@ -35,8 +35,8 @@ public class TreeTile extends Tile
 	@Override
 	public void draw(int xOffset, int yOffset)
 	{
-		int imageX = this.x*50 - xOffset;
-		int imageY = this.y*50 - yOffset;
+		int imageX = this.x*Globals.TILE_WIDTH - xOffset;
+		int imageY = this.y*Globals.TILE_HEIGHT - yOffset;
 		
 		if(imageX > -Globals.TILE_WIDTH && imageX < Globals.SCREEN_WIDTH && imageY > -100 && imageY < Globals.SCREEN_HEIGHT)
 		{

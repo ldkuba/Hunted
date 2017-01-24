@@ -5,9 +5,9 @@ public class Globals
 	public static final int TILE_WIDTH = 50;
 	public static final int TILE_HEIGHT = 50;
 	
-	public static int SCREEN_WIDTH = 800;
-	public static int SCREEN_HEIGHT = 600;
-	public static boolean FULLSCREEN = false;
+	public static int SCREEN_WIDTH = 1920;
+	public static int SCREEN_HEIGHT = 1080;
+	public static boolean FULLSCREEN = true;
 	
 	public static int MAX_FPS = 60;
 	

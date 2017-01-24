@@ -15,9 +15,9 @@ public class Tile
 	int x, y;
 	int type;
 	
-	Image tileImage;
+	protected Image tileImage;
 	
-	ArrayList<Button> tileButtons;
+	protected ArrayList<Button> tileButtons;
 	
 	static Image selectionImage;
 	boolean selected = false;

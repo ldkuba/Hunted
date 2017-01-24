@@ -1,9 +1,5 @@
 package network;
 
-import main.Main;
-import main.Menu;
-import method.StartNewTurnMethod;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -11,6 +7,8 @@ import action.Action;
 import action.MoveAction;
 import action.ToggleDoorAction;
 import action.ToggleLampAction;
+import main.Main;
+import method.StartNewTurnMethod;
 
 public class ServerMessageHandler implements Runnable
 {

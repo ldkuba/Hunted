@@ -17,9 +17,8 @@ public class Level
 	int lvlWidth = 0;
 	int lvlHeight = 0;
 
-	int[][] typeMap;
-
 	Tile[][] tileMap;
+	GameObject[][] objectMap;
 
 	Main app;
 	GameContainer gc;
@@ -45,6 +44,7 @@ public class Level
 			for (int i = 0; i < lvlWidth; i++)
 			{
 				tileMap[i][j].draw(xOffset, yOffset);
+				objectMap[i][j].draw(xOffset, yOffset);
 			}
 		}
 	}
@@ -109,7 +109,6 @@ public class Level
 			lvlWidth = Integer.parseInt(size[0]);
 			lvlHeight = Integer.parseInt(size[1]);
 
-			typeMap = new int[lvlWidth][lvlHeight];
 			index++;
 
 			while ((sCurrentLine = br.readLine()) != null)
@@ -129,7 +128,7 @@ public class Level
 					{
 						int tileType = Integer.parseInt(tileStr[i]);
 
-						typeMap[i][index] = tileType;
+						
 					}
 					index++;
 				}
@@ -248,9 +247,7 @@ public class Level
 
 	public int getType(int x, int y)
 	{
-		int type = typeMap[x][y];
-
-		return type;
+		return tileMap[x][y].type;
 	}
 
 	private void createMap()

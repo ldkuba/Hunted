@@ -84,6 +84,8 @@ public class Main extends BasicGame implements ComponentListener
 	Label playerHealthLabel;
 	Font labelFont;
 	
+	ArrayList<Button> selectionButtons;
+	
 	Image actionBarImage;
 	Image inventoryBarImage;
 	Image infoBarImage;
@@ -105,7 +107,6 @@ public class Main extends BasicGame implements ComponentListener
 		
 		currentLevel = new Level("res/levels/mansion.txt", this, gc);
 		
-		
 		input = gc.getInput();
 		
 		playerActions = new ArrayList<Action>();
@@ -117,6 +118,8 @@ public class Main extends BasicGame implements ComponentListener
 		actionBarImage = new Image("res/textures/gui/actionBar.png");
 		inventoryBarImage = new Image("res/textures/gui/Inventory.png");
 		infoBarImage = new Image("res/textures/gui/infoBar.png");
+		
+		selectionButtons = new ArrayList<Button>();
 		
 		labelFont = new Font("Verdana", Font.BOLD, 20);
 		endTurnButton = new Button("endTurnButton", Globals.SCREEN_WIDTH * Globals.SCREEN_RES * 0.935f, Globals.SCREEN_HEIGHT * Globals.SCREEN_RES * 0.88f, 100, 30, "res/textures/gui/gameEndTurnButton.png", gc, this)
